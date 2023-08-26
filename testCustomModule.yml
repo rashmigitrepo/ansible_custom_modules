@@ -1,0 +1,13 @@
+---
+- name: Example playbook using custom module
+  hosts: localhost 
+  tasks:
+    - name: Run my_custom_module
+      my_custom_module:
+        my_argument: "Hello, world!"
+        another_argument: 10
+      register: module_result
+
+    - name: Print module result
+      debug:
+        var: module_result
