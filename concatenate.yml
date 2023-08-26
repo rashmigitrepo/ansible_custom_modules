@@ -1,0 +1,13 @@
+---
+- name: Example playbook using concatenate module
+  hosts: localhost 
+  tasks:
+    - name: Combining two words
+      concatenate:
+        string1: "Hello,"
+        #string2: "World!"
+      register: module_result
+
+    - name: Print module result
+      debug:
+        var: module_result
